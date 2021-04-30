@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloWorldController {
-    @GetMapping
-    public String displayHelloWorld(){
-        return "index";
-    }
+//    @GetMapping
+//    public String displayHelloWorld(){
+//        return "index";
+//    }
 }

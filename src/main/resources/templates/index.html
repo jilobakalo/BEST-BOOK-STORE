@@ -3,11 +3,14 @@
 
 <head th:replace="fragments :: head">
 </head>
-<div th:replace="fragments :: page-header">A BEST BOOKSTORE</div>
-<body>
+
+<body class="container">
+<!--<div th:replace="fragments :: page-header">A BEST BOOKSTORE</div>-->
+<div th:replace="fragments :: storename">A BEST BOOKSTORE</div>
+<div th:replace="fragments :: navigation"></div>
 <!--<p>Hello World</p>-->
-<div class="container row hero-pad alert alert-success" >
-    <div class=" col-md-6 col-12 col-sm-6 p-4 text-wrap border " role="alert" style="width: 25rem;">
+<div class="container row hero-pad " >
+    <div class=" col-md-6 col-12 col-sm-6 p-4 text-wrap border " style="width: 25rem;">
         <p class="font-italic">
         <h3 class="text-center"> Welcome to A Best Bookstore!</h3>
         A Best Bookstore is an online bookstore with a mission to financially support local, independent bookstores.
@@ -40,21 +43,25 @@
             <span class="sr-only">Next</span>
         </a>
         <div>
-        <form>
-                <P>Buy from the A Best Bookstore</P>
+        <form class="post">
+                <h3> A Best Bookstore</h3>
+            <p th:text="${title}"></p>
             <div class="form-group">
                 <label th:for="username">Username
-                    <input class="form-control" >
+                    <input class="form-control" th:field="${loginFormDTO.username}">
                 </label>
+                <p class="error" th:errors="${loginFormDTO.username}"></p>
             </div>
             <div class="form-group">
-                <label th:for="password">PassWord
-                    <input class="form-control" type="password" >
+                <label th:for="password">Password
+                    <input class="form-control" th:field="${loginFormDTO.password}" type="password" >
                 </label>
+                <p class="error" th:errors="${loginFormDTO.password}"></p>
             </div>
             <input type="submit" class="btn btn-primary" value="Log In" />
-            <p> Have not Account<a href="@{/registration}"> Sign Up</a> </p>
+
         </form>
+            <p>If you don't have an account<a href="/register"> Sign Up</a> here.</p>
     </div>
     </div>
 </div>

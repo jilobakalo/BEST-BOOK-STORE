@@ -1,12 +1,12 @@
 package Liftoff.launchcode.onlinebookstore.model.data;
 
-import Liftoff.launchcode.onlinebookstore.model.User;
+import Liftoff.launchcode.onlinebookstore.model.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 
 @Repository
-public interface UserRepository extends CrudRepository<User,Integer> {
-    User findByUsername(String username);
+@Transactional
+public interface CategoryRepository extends CrudRepository<Category,Integer> {
 }

@@ -2,58 +2,129 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>Big Store</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
-    <link th:href="@{/css/Abestbookstore.css}" rel="stylesheet" />
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/js/bootstrap.js}" rel="stylesheet" />
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../css/master_style.css">
+
+    <!-- Medi Admin skins -->
+    <link rel="stylesheet" href="../css/skins/_all-skins.css">
 </head>
-<body class="alert alert-success">
-<div th:fragment="storename"class="jumbotron p-3 mb-2 text-dark">
-    <div  class="container text-center">
-        <h2>A BEST BOOKSTORE</h2>
+
+<body>
+
+<header>
+<div th:fragment="header">
+    <div class="text-white container-xxl navbar-fixed-top">
+        <div class=" text-center px-3 py-2 d-block text-bold old-bv bg-success">
+            <h2>A BEST BOOKSTORE</h2>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-dark bd-navbar bg-dark">
+                <ul class="nav navbar-nav navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
+                    <li class="nav-item col-6 col-md-auto"> <a  th:href="@{/}"> <span class="fa fa-fw fa-home"></span> HomePage</a></li>
+                    <li class="nav-item col-6 col-md-auto"><a  th:href="@{/}">About us </a></li>
+                    <li class="nav-item col-6 col-md-auto"><a th:href="@{/}"><span class=" fa fa-fw fa-envelope"></span> Contacts</a></li>
+                    <form class="d-flex">
+                        <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit"><span class=" fa fa-fw fa-search"></span> Search</button>
+                    </form>
+                    <li class="nav-item col-6 col-md-auto"><a href="#"><span class=" fa fa-fw fa-user-circle"></span> Your Account</a></li>
+                    <li class="nav-item col-6 col-md-auto"><a th:href="@{/login}"><span class="fa fa-fw fa-user"></span> log in</a></li>
+                    <li class="nav-item col-6 col-md-auto"><a href="#"><span class=" fa fa-fw fa-shopping-cart"></span> Cart</a></li>
+                </ul>
+        </nav>
     </div>
 </div>
-<div th:fragment="navigation" clas="" >
-    <nav class="navbar navbar-inverse navbar-fixed-top bg-dark">
-   <div class="container">
-       <ul class="nav justify-content-center fs-5 ">
-        <li class="nav-item"> <a class="nav-link"  th:href="@{/}">HomePage</a></li>
-        <li class="nav-item"><a  class="nav-link" th:href="@{/}">About us </a></li>
-        <li class="nav-item"><a  class="nav-link" th:href="@{/}">Contacts</a></li>
-        <form class="d-flex">
-            <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-   </ul>
+</header>
 
-   <ul  class="nav justify-content-center fs-5 navbar-right">
-        <li ><a href="#"><span class=" glyphicon glyphicon-user"></span> Your Account</a></li>
-       </ul>
-       <ul class="nav justify-content-center fs-5 navbar-right">
-        <li><a href="#"><span class=" glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-<!--       <a  class="nav-link" th:href="@{/}">-->
-<!--           <span class="glyphicon glyphicon-shopping-cart"></span>-->
-<!--           Cart</a>-->
-    </ul>
-</div>
-       </nav>
-
-</div>
-<footer th:fragment="footer" class="p-3 mb-2 bg-dark text-white" >
-<nav clas="navbar navbar-inverse navbar-fixed-top ">
-    <div class="container">
-        <ul class="nav justify-content-center fs-5 ">
-            <li class="nav-item"><a href="jilo1jima@gmail.com">CopyRight:jilo1jima@gmail.com</a>
+<!--side bar -->
+<main th:fragment="sidebar">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-secondary" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use th:href="@{/home}"/></svg>
+            <span class="fs-4">Sidebar</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" aria-current="page">
+                    <svg class="bi me-2" width="16" height="16"><use th:href="@{/home}"/></svg>
+                    Home
+                </a>
             </li>
-            <li class="nav-item"><a  class="nav-link" th:href="@{/}">About us </a></li>
-            <li class="nav-item"><a  class="nav-link" th:href="@{/}">Contacts</a></li>
-            <li class="nav-item"><a  class="nav-link" th:href="@{/}">Address</a></li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <svg class="bi me-2" width="16" height="16"><use th:href="@{/home}"/></svg>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <svg class="bi me-2" width="16" height="16"><use th:href="@{/home}"/></svg>
+                    Orders
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <svg class="bi me-2" width="16" height="16"><use th:href="@{/home}"/></svg>
+                    Products
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <svg class="bi me-2" width="16" height="16"><use th:href="@{/home}"/></svg>
+                    Customers
+                </a>
+            </li>
         </ul>
     </div>
+</main>
 
-</nav>
+<!--logout navigation-->
+<section th:fragment="logoutnavigation">
+    <div class="text-center px-3 py-2 d-block text-bold old-bv bg-success">
+        <h2>A BEST BOOKSTORE</h2>
+    </div>
+    <nav class="navbar navbar-inverse bg-dark">
+        <div class="container">
+            <ul class="nav justify-content-center fs-5 ">
+                <li class="nav-item"> <a class="nav-link"  th:href="@{/}"><span class="fa fa-fw fa-home"></span>HomePage</a></li>
+                <li class="nav-item"><a  class="nav-link" th:href="@{/}">About us </a></li>
+                <li class="nav-item"><a  class="nav-link" th:href="@{/}"><span class="fa fa-fw fa-envelope"></span> Contacts</a></li>
+                <form class="d-flex">
+                    <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><span class="fa fa-fw fa-search"></span> Search</button>
+                </form>
+            </ul>
+            <ul  class="nav justify-content-center fs-5 navbar-right">
+                <li ><a href="#"><span class="fa fa-fw fa-user-circle"></span> myAccount</a></li>
+                <li><a href="#"><span class="fa fa-fw fa-shopping-cart"></span> Cart</a></li>
+                <li><a th:href="@{/logout}"><span class="fa fa-fw fa-user"></span></span> log out</a></li>
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<footer th:fragment="footer" class=" bd-footer py-5 mt-5 bg-info text-white " >
+
+        <div class="container-fluid py-5">
+            <ul class="nav justify-content-center fs-5 ">
+                <li class="nav-item"><a href="jilo1jima@gmail.com">CopyRight:jilo1jima@gmail.com</a>
+                </li>
+                <li class="nav-item"><a  class="nav-link" th:href="@{/}"> About us </a></li>
+                <li class="nav-item"><a  class="nav-link" th:href="@{/}"><span class="fa fa-fw fa-address-book"></span> Contacts</a></li>
+                <li class="nav-item"><a  class="nav-link" th:href="@{/}"> <span class="fa fa-fw fa-address-card"></span> Address</a></li>
+            </ul>
+        </div>
+
 </footer>
 </body>
 

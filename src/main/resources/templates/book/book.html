@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="hold-transition skin-light mediblue-sidebar sidebar-mini">
+<section th:replace="fragments :: logoutnavigation"></section>
+<section class="row ">
+    <div th:replace="fragments :: sidebar"></div>
+    <div class="container body-content">
+        <h2>TechJobs</h2>
+        <ul>
+            <li th:each="job : ${jobs}">
+                <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>
+            </li>
+        </ul>
+
+    </div>
+</section>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

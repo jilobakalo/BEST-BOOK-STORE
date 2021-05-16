@@ -3,21 +3,28 @@ package Liftoff.launchcode.onlinebookstore.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Book {
     @Id
     @GeneratedValue
     private Integer ID;
-
+    @NotNull
+    @Size(min=5,max=500, message="The book name must between five to five hundred.")
     private String bookName;
+
     private String author;
     private String title ;
-    private String category;
     private int price ;
     private String description;
+    @ManyToOne
+    @NotNull(message="category is required")
+    private Category category;
 
-    public Book(String bookName, String author, String title, String category, int price, String description) {
+    public Book(String bookName, String author, String title, Category category, int price, String description) {
         this.bookName = bookName;
         this.author = author;
         this.title = title;
@@ -57,11 +64,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 

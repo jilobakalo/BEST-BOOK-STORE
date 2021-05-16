@@ -3,11 +3,11 @@
 
 <head th:replace="fragments :: head">
 </head>
-<body class="container">
+<body>
 
-<div th:replace="fragments :: storename">A BEST BOOKSTORE</div>
-<div th:replace="fragments :: navigation"></div>
-
+<div th:replace="fragments :: header">A BEST BOOKSTORE</div>
+<!--<div th:replace="fragments :: navigation"></div>-->
+<div class="container">
 <form method="post">
     <p style="text-align:center" th:text="${title}"> </p>
     <div class="form group">
@@ -31,7 +31,7 @@
     </div>
     <input type="submit" class="btn btn-primary" value="Register" />
 </form>
-
+</div>
 <div th:replace="fragments :: footer"></div>
 </body>
 

@@ -6,22 +6,24 @@
 <body>
 
 <div th:replace="fragments :: header">A BEST BOOKSTORE</div>
-<!--<div th:replace="fragments :: navigation"></div>-->
-<div class="container">
-<form method="post">
-    <p style="text-align:center" th:text="${title}"> </p>
+<div th:replace="fragments :: sidebar"></div>
+<div class="container-form row hero-pad">
+    <div class="container">
+<form method="post" >
+    <h3> A Best Bookstore</h3>
+    <p th:text="${title}"> </p>
     <div class="form group">
         <label> Username
              <input class="form-control" th:field="${registerFormDTO.username}" />
         </label>
-        <p class="error" th:errors="${registerFormDTO.username}"></p>
+        <p class="alert alert-danger error" th:errors="${registerFormDTO.username}"></p>
     </div>
 
         <div class="form group">
             <label> Password
                 <input class="form-control" th:field="${registerFormDTO.password}" />
             </label>
-            <p class="error" th:errors="${registerFormDTO.password}"></p>
+            <p class="alert alert-danger error" th:errors="${registerFormDTO.password}"></p>
         </div>
 
     <div class="form group">
@@ -31,6 +33,7 @@
     </div>
     <input type="submit" class="btn btn-primary" value="Register" />
 </form>
+</div>
 </div>
 <div th:replace="fragments :: footer"></div>
 </body>

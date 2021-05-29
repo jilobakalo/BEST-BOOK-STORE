@@ -7,24 +7,23 @@
     <meta name="author" content="">
     <title>Big Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/56d374c6aa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
     <link th:href="@{/js/bootstrap.js}" rel="stylesheet" />
-
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
-
 <body>
-
-<header>
-<div th:fragment="header">
-    <div class="text-white container-xxl navbar-fixed-top">
-        <div class=" text-center px-3 py-2 d-block text-bold old-bv bg-success">
-            <h2>A BEST BOOKSTORE</h2>
-        </div>
-        <nav class="navbar navbar-expand-md navbar-dark bd-navbar bg-dark">
-                <ul class="nav navbar-nav navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
-                    <li class="nav-item col-6 col-md-auto"> <a  th:href="@{/}"> <span class="fa fa-fw fa-home"></span> HomePage</a></li>
+<!--navigation starts -->
+<header th:fragment="header">
+<div>
+        <nav class="navbar navbar-expand-md bg-dark header-navbar" >
+            <div class=" store-name text-bold">
+                <h2>A BEST BOOKSTORE</h2>
+            </div>
+            <ul class="nav navbar-nav navbar-nav flex-row flex-wrap bd-navbar-nav">
+                    <li class="nav-item-active col-6 col-md-auto"><a  th:href="@{/}"> <span class="fa fa-fw fa-home"></span> HomePage</a></li>
                     <li class="nav-item col-6 col-md-auto"><a  th:href="@{/}">About us </a></li>
                     <li class="nav-item col-6 col-md-auto"><a th:href="@{/}"><span class=" fa fa-fw fa-envelope"></span> Contacts</a></li>
                     <form class="d-flex">
@@ -37,20 +36,20 @@
                 </ul>
         </nav>
     </div>
-</div>
 </header>
-
+<!--navigation end-->
 <!--side bar -->
 <main th:fragment="sidebar">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-secondary" style="width: 280px;">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+<div class="wrapper">
+    <div class="d-flex flex-column flex-shrink-0 text-white bg-secondary" id="sidebar-wrapper">
+        <a href="/" class="d-flex align-items-center mb-3  me-md-auto text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use th:href="@{/home}"/></svg>
-            <span class="fs-4">Sidebar</span>
+            <span class="fs-4">A BEST BOOKSTORE</span>
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="#" class="nav-link" aria-current="page">
+                <a href="#" class=" home nav-link" aria-current="page">
                     <svg class="bi me-2" width="16" height="16"><use th:href="@{/home}"/></svg>
                     Home
                 </a>
@@ -81,38 +80,48 @@
                 </a>
             </li>
         </ul>
+        <div class="social-media">
+            <a href=""class="fab fa-facebook-square"></a>
+            <a href="" class="fab fa-twitter-square"> </a>
+            <a href="" class="fab fa-instagram-square"> </a>
+        </div>
     </div>
+</div>
 </main>
 
+<section th:fragment="body">
+    <div class="wrapper">
+        <div class="page-content">
+
+        </div>
+    </div>
+</section>
 <!--logout navigation-->
 <section th:fragment="logoutnavigation">
-    <div class="text-center px-3 py-2 d-block text-bold old-bv bg-success">
+    <div>
+    <nav class="navbar navbar-expand-md bg-dark header-navbar" >
+    <div class="store-name text-bold">
         <h2>A BEST BOOKSTORE</h2>
     </div>
-    <nav class="navbar navbar-inverse bg-dark">
-        <div class="container">
-            <ul class="nav justify-content-center fs-5 ">
+        <ul class="nav navbar-nav navbar-nav flex-row flex-wrap bd-navbar-nav">
                 <li class="nav-item"> <a class="nav-link"  th:href="@{/}"><span class="fa fa-fw fa-home"></span>HomePage</a></li>
                 <li class="nav-item"><a  class="nav-link" th:href="@{/}">About us </a></li>
                 <li class="nav-item"><a  class="nav-link" th:href="@{/}"><span class="fa fa-fw fa-envelope"></span> Contacts</a></li>
                 <form class="d-flex">
                     <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit"><span class="fa fa-fw fa-search"></span> Search</button>
+                    <button class="btn btn-outline-success" type="submit"><span class=" fa fa-fw fa-search"></span> Search</button>
                 </form>
-            </ul>
-            <ul  class="nav justify-content-center fs-5 navbar-right">
                 <li ><a href="#"><span class="fa fa-fw fa-user-circle"></span> myAccount</a></li>
                 <li><a href="#"><span class="fa fa-fw fa-shopping-cart"></span> Cart</a></li>
                 <li><a th:href="@{/logout}"><span class="fa fa-fw fa-user"></span></span> log out</a></li>
-            </ul>
-        </div>
+        </ul>
     </nav>
+    </div>
 </section>
 
-<footer th:fragment="footer" class=" bd-footer py-5 mt-5 bg-info text-white " >
-
-        <div class="container-fluid py-5">
-            <ul class="nav justify-content-center fs-5 ">
+<footer th:fragment="footer">
+        <div class="bg-info">
+            <ul class="nav justify-content-center">
                 <li class="nav-item"><a href="jilo1jima@gmail.com">CopyRight:jilo1jima@gmail.com</a>
                 </li>
                 <li class="nav-item"><a  class="nav-link" th:href="@{/}"> About us </a></li>
@@ -120,8 +129,11 @@
                 <li class="nav-item"><a  class="nav-link" th:href="@{/}"> <span class="fa fa-fw fa-address-card"></span> Address</a></li>
             </ul>
         </div>
-
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+
+</script>
 </body>
 
 </html>

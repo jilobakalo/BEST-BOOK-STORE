@@ -6,8 +6,8 @@
 
 <body>
 <div th:replace="fragments :: header">A BEST BOOKSTORE</div>
-<div class="row hero-pad">
-    <div th:replace="fragments :: sidebar"></div>
+<div th:replace="fragments :: sidebar"></div>
+<div class="container-form row hero-pad">
     <div class="container">
     <form method="post">
         <h3> A Best Bookstore</h3>
@@ -16,20 +16,21 @@
             <label th:for="username">Username
                 <input class="form-control" th:field="${loginFormDTO.username}">
             </label>
-            <p class="error" th:errors="${loginFormDTO.username}"></p>
+            <p class="alert alert-danger error" th:errors="${loginFormDTO.username}"></p>
         </div>
         <div class="form-group">
             <label th:for="password">Password
                 <input class="form-control" th:field="${loginFormDTO.password}" type="password" >
             </label>
-            <p class="error" th:errors="${loginFormDTO.password}"></p>
+            <p class="alert alert-danger error" th:errors="${loginFormDTO.password}"></p>
         </div>
         <input type="submit" class="btn btn-primary" value="Log In" />
     </form>
     <p>If you don't have an account<a href="/register"> Sign Up</a> here.</p>
 
     </div>
+
 </div>
-<div th:replace="fragments :: footer"></div>
+<!--<div th:replace="fragments :: footer"></div>-->
 </body>
 </html>

@@ -2,20 +2,43 @@
 <html lang="el" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
-<body class="hold-transition skin-light mediblue-sidebar sidebar-mini">
-<section th:replace="fragments :: logoutnavigation"></section>
-<section class="row ">
+<body>
+<!--<section th:replace="fragments :: logoutnavigation"></section>-->
+<!--<section class="row ">-->
+<!--    <div th:replace="fragments :: sidebar"></div>-->
+<!--    <div class="container body-content">-->
+<!--        <h2>TechJobs</h2>-->
+<!--        <ul>-->
+<!--            <li th:each="job : ${jobs}">-->
+<!--                <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>-->
+<!--            </li>-->
+<!--        </ul>-->
+
+<!--    </div>-->
+<!--</section>-->
+<!--<div th:replace="fragments :: footer"></div>-->
+
+<header>
+    <section th:replace="fragments :: logoutnavigation"></section>
     <div th:replace="fragments :: sidebar"></div>
-    <div class="container body-content">
-        <h2>TechJobs</h2>
-        <ul>
-            <li th:each="job : ${jobs}">
-                <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>
-            </li>
-        </ul>
+<div class="wrapper">
+    <div class="page-content">
+            <div class="header">well-come my page</div>
+            <div class="info">
+                <img  src="https://images-na.ssl-images-amazon.com/images/I/51Q3ApUys+L._SY344_BO1,204,203,200_.jpg"
+                <Ul class="text">
+                    <li class="author">  <a href="">Jilo Baklo</a> </li>
+                    <li class="title"> <a href="">well-come</a> </li>
+                    <li>$90</li>
+                </Ul>
+            </div>
 
     </div>
-</section>
-<div th:replace="fragments :: footer"></div>
+</div>
+</header>
+
+<footer>
+    <div th:replace="fragments :: footer"></div>
+</footer>
 </body>
 </html>

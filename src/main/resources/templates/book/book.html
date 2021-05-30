@@ -3,6 +3,29 @@
 <head th:replace="fragments :: head"></head>
 
 <body>
+<div th:replace="fragments :: logoutnavigation"></div>
+<div class="wrapper">
+    <div th:replace="fragments :: sidebar"></div>
+    <div class="page-content">
+            <div class="header">well-come my page</div>
+            <div class="info">
+                <img  src="https://images-na.ssl-images-amazon.com/images/I/51Q3ApUys+L._SY344_BO1,204,203,200_.jpg">
+                <Ul class="text">
+                    <li class="author">  <a href="">Jilo Baklo</a> </li>
+                    <li class="title"> <a href="">well-come</a> </li>
+                    <li>$90</li>
+                </Ul>
+            </div>
+    </div>
+</div>
+
+
+<footer>
+    <div th:replace="fragments :: footer"></div>
+</footer>
+</body>
+</html>
+
 <!--<section th:replace="fragments :: logoutnavigation"></section>-->
 <!--<section class="row ">-->
 <!--    <div th:replace="fragments :: sidebar"></div>-->
@@ -17,28 +40,3 @@
 <!--    </div>-->
 <!--</section>-->
 <!--<div th:replace="fragments :: footer"></div>-->
-
-<header>
-    <section th:replace="fragments :: logoutnavigation"></section>
-    <div th:replace="fragments :: sidebar"></div>
-<div class="wrapper">
-    <div class="page-content">
-            <div class="header">well-come my page</div>
-            <div class="info">
-                <img  src="https://images-na.ssl-images-amazon.com/images/I/51Q3ApUys+L._SY344_BO1,204,203,200_.jpg"
-                <Ul class="text">
-                    <li class="author">  <a href="">Jilo Baklo</a> </li>
-                    <li class="title"> <a href="">well-come</a> </li>
-                    <li>$90</li>
-                </Ul>
-            </div>
-
-    </div>
-</div>
-</header>
-
-<footer>
-    <div th:replace="fragments :: footer"></div>
-</footer>
-</body>
-</html>

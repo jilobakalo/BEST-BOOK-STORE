@@ -86,18 +86,18 @@ margin:0 5px
     border-top: 1px solid rgba(225, 225, 225, 0.05);
 
 }
-.wrapper #sidebar-wrapper ul li a{
+ #sidebar-wrapper ul li:hover{
+    background: rosybrown;
+}
+ #sidebar-wrapper ul li:hover a:hover{
+   color: seashell;
+}
+ #sidebar-wrapper ul li a{
  color: #bdb8d7;
  display: block;
 }
-.wrapper #sidebar-wrapper ul li a .home{
+ #sidebar-wrapper ul li a .home{
     width: 25px;
-}
-.wrapper #sidebar-wrapper ul li:hover{
-    background: rosybrown;
-}
-.wrapper #sidebar-wrapper ul li:hover a:hover{
-   color: seashell;
 }
 
 
@@ -135,6 +135,18 @@ margin:0 5px
     width: 20rem;
 
 }
+.carousel-control{
+   height: 50px;
+   width: 50px;
+   padding:50px
+   margin: 5px
+    }
+ .carousel-control a{
+   height: 50px;
+   width: 50px;
+   padding:10px
+   margin: 10px
+    }
 
 /** content login and sing up **/
 .container-form{
@@ -161,31 +173,29 @@ margin:0 5px
     margin-bottom: 20px;
 }
 .wrapper .page-content .info img{
-    width: 160px;
-    height:220px;
+    width: 200px;
+    height:240px;
     float: left;
+    margin:20px
 }
 .wrapper .page-content .info .text{
-    display: inline-block;
-    padding: 20px;
-    font-size: 18px;
-    font-weight: bold;
+       display: inline-block;
+       padding: 30px;
+       font-size: 18px;
+       font-weight: bold;
 }
-.wrapper .page-content .info ul{
-  padding:5px;
-  margin-bottom:30px;
-   }
+.wrapper .page-content .info .text li{
+margin-bottom: 30px;
+}
 /* footer */
 
    footer {
      text-align: center;
      padding: 3px;
      color: white;
-     position: fixed;
      left: 0;
      bottom: 0;
-     width: 100%;
-   }
+ }
 
 
 /*
